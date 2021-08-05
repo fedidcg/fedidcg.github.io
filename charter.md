@@ -1,6 +1,6 @@
 # Federated Identity Community Group Charter
 
-- [This Charter](https://fedidcg.github.io/charters/2021-08-02)
+- [This Charter](https://fedidcg.github.io/charters/2021-08-02) (version 2021-08-02)
 - Previous Charter: n/a
 - Start Date: August 2, 2021
 

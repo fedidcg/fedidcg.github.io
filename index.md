@@ -1,4 +1,4 @@
-# Federated Identity Community Group (fedidcg)
+# Federated Identity Community Group
 
 Hi there!👋
 
@@ -12,6 +12,9 @@ It's easy to [join](https://www.w3.org/community/fed-id/) the CG if you'd like t
 
 We publish a list of [current participants](https://www.w3.org/community/fed-id/participants) on our W3C page.
 
+### Regular Meeting Schedule
+
+> Coming Soon!
 ## Our Work
 
 We conduct all of our technical work in public, mainly in [various GitHub repositories](https://github.com/fedidcg/) but also in periodic teleconferences and face-to-face meetings.
@@ -20,12 +23,16 @@ We try to keep the [list of our current work items](charter#work-items) in our [
 
 We discuss new proposals in our [proposals repository](https://github.com/fedidcg/proposals).
 
-We have teleconferences twice a month, and occasional face-to-face meetings throughout the year. We organize our meetings and publish the agendas and minutes from them in our [meetings repository](https://github.com/fedidcg/meetings/).
+We have teleconferences twice a month, and occasional face-to-face meetings throughout the year. 
+
+We organize our meetings and publish the agendas and minutes from them in our [meetings repository](https://github.com/fedidcg/meetings/).
 
 ## Chairs
 
-- Heather Flanagan, Chair
-- Tim Cappalli (Microsoft), Co-chair
+| Name                                              | Role     | Status |
+| ------------------------------------------------- | -------- | ------ |
+| [Heather Flanagan](https://github.com/hlflanagan) | Chair    | Active |
+| [Tim Cappalli](https://github.com/timcappalli)    | Co-chair | Active |
 
 ## Questions?
 
@@ -34,3 +41,12 @@ If you have any questions or concerns, the chairs are more than happy to help. T
 ## Code of Conduct
 
 Please note that all work and communication within the Privacy CG is covered by the [W3C Code of Ethics and Professional Conduct](https://www.w3.org/Consortium/cepc/).
+
+## Quick Links
+
+* [Group Charter](charter)
+* [Meeting Agendas and Minutes](https://github.com/fedidcg/meetings/)
+* [Proposals Repo](https://github.com/fedidcg/proposals)
+* [Administrivia Repo](https://github.com/fedidcg/admin/)
+* [Official W3C page](https://www.w3.org/community/fed-id/)
+* [Slack Channel](https://w3ccommunity.slack.com/archives/C02355QUL73)
