@@ -14,7 +14,7 @@ We publish a list of [current participants](https://www.w3.org/community/fed-id/
 
 ### Regular Meeting Schedule
 
-> Coming Soon!
+Coming Soon!
 ## Our Work
 
 We conduct all of our technical work in public, mainly in [various GitHub repositories](https://github.com/fedidcg/) but also in periodic teleconferences and face-to-face meetings.
