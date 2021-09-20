@@ -14,7 +14,10 @@ We publish a list of [current participants](https://www.w3.org/community/fed-id/
 
 ### Regular Meeting Schedule
 
-Coming Soon!
+* 2021-09-28 00:00 GMT (APAC-friendly) | [Time Zone Conversions](https://www.timeanddate.com/worldclock/converter.html?iso=20210928T000000&p1=tz_gmt&p2=16&p3=776&p4=438&p5=28&p6=236&p7=248&p8=240&p9=234&p10=24&p11=43)
+* 2021-10-15 15:00 GMT | [Time Zone Conversions](https://www.timeanddate.com/worldclock/converter.html?iso=20211015T150000&p1=tz_gmt&p2=16&p3=776&p4=438&p5=28&p6=236&p7=248&p8=240&p9=234&p10=24&p11=43)
+* 2021-10-26 00:00 GMT (APAC-friendly) | [Time Zone Conversions](https://www.timeanddate.com/worldclock/converter.html?iso=20211026T000000&p1=tz_gmt&p2=16&p3=776&p4=438&p5=28&p6=236&p7=248&p8=240&p9=234&p10=24&p11=43)
+
 ## Our Work
 
 We conduct all of our technical work in public, mainly in [various GitHub repositories](https://github.com/fedidcg/) but also in periodic teleconferences and face-to-face meetings.
