@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>FedID Community Group Draft Report</title>
+    <script
+      src="https://www.w3.org/Tools/respec/respec-w3c"
+      class="remove"
+      defer
+    ></script>
+    <script class="remove">
+      // All config options at https://respec.org/docs/
+      var respecConfig = {
+        specStatus: "ED",
+        editors: [{ name: "Heather Flanagan", url: "https://github.com/fedidcg" }, { name: "Kris Chapman", url: "https://github.com/fedidcg" }, { name: "Tim Cappalli", url: "https://github.com/fedidcg" }],
+        github: "fedidcg/Report",
+        shortName: "draft-report",
+        xref: "web-platform",
+        group: "FedID CG",
+      };
+    </script>
+  </head>
+  <body>
+    <section id="abstract">
+      <p>TBD</p>
+    </section>
+    <section id="sotd">
+      <p>This specification was published by the <a href="https://www.w3.org/community/fed-id/">Federated Identity Community
+        Group</a>. It is not a W3C Standard nor is it on the <a href="https://www.w3.org/community/about/agreements/cla/">W3C Standards Track</a>.
+        Please note that under the W3C Community Contributor License Agreement
+        (CLA) there is a limited opt-out and other conditions apply. Learn more
+        about <a href="http://www.w3.org/community/">W3C Community and Business Groups</a>.</p>
+    </section>
+    <section>
+      <aside class="note" title="Note">
+        <p>This document is a Draft.</p>
+      </aside>
+      <h1>Overview</h1>
+      <p>As noted in our charter, the purpose of the Federated Identity
+        Community Group is to provide a forum focused on incubating web features
+        that will both support federated identity and prevent opaque,
+        uncontrollable tracking of users across the web. The community group
+        recognizes the need to balance privacy concerns against the need to
+        explore innovative ideas around federated authentication on the web.
+        The initial work of the group focuses on the short-term goals as
+        prioritized by the urgency of changes already underway, such as the
+        phasing out of third-party cookies. </p>
+      <p>At the time of this report, the community group has several outputs,
+        including a detailed list of federated authentication protocol elements
+        and how they will be impacted by changes in third-party cookies, link
+        decoration, and bounce tracking. The community group has also begun to
+        document how different proposals and protocol elements might be used to
+        mitigate the changes being introduced as browsers add mechanisms to
+        prevent tracking. The group has one formal work item, the Federated
+        Credential Management API, that explores one potential path for some
+        services to follow as third-party cookies are deprecated. </p>
+      <p>Given the complexity of the use cases surrounding federated
+        authentication workflows, it is unlikely that any one proposal or work
+        item in any standards organization will resolve all the issues that
+        will arise as the low-level primitives on the web change or are removed.
+        Part of the work of the community group is to gather sufficient
+        information that developers will be able to determine what mix of
+        protocol elements, browser APIs, and other tools will meet their needs
+        in continuing to use federated identity on the web.</p>
+    <h2>Terminology</h2>
+    <p><i>a glossary of terms that have specific domain definitions and clarify
+      possible collisions as they relate to this context.</i></p>
+    <p>Credentials - When browser vendors refer to credentials, they typically
+      mean an object which allows a developer to make an authentication decision
+      for a particular action. (See also <a href>https://www.w3.org/TR/credential-management-1/#core</a>)</p>
+    <p>Sign-in - the act of authenticating into an existing account. While the
+      user may experience this as part of the overall UX for a registration
+      process, it is a logically distinct activity from Sign-up.</p>
+    <p>Sign-out - the act of ending one or more sessions.</p>
+    <p>Sign-up - the act of establishing or registering an account with a
+      service. While an end-user can sign-up and sign-in simultaneously,
+      logically they are two separate actions. (Similar to how some sites make
+      the choice of “if you can authenticate, you are authorized to use/access
+      the service” despite authentication and authorization being two logically
+      distinct actions.)</p>
+    <h2>Understanding Basic Federated Identity Flows</h2>
+    <p>In any federated identity flow, there are effectively four parties
+      involved: the user, the user-agent (the browser or app) the user is
+      employing, the Relying Party that manages the resource the user is trying to
+      access, and the Identity Provider that is validating the user’s access.</p>
+
+    <img alt="four body diagram with user, user-agent, relying party, and identity provider" src="images/fedidcg-image4.png">
+
+    <p>Generally speaking, the frameworks and protocols involved in identity
+      federation most often are OAuth 2.0, OpenID Connect (OIDC), and SAML 2.0.
+      OAuth is a framework for providing authorization to protected resources.
+      OpenID Connect is an identity layer that works on top of OAuth and handles
+      the authentication of the user. Authorization indicates that the user should
+      have access to a resource, but it does not serve to connect the user to an
+      existing account.  Authentication, on the other hand, is the process of
+      establishing that the entity requesting access can be connected with an
+      existing account; it does not indicate whether the user should have access
+      to anything.</p>
+
+    <p>SAML is similar to OpenID Connect in that it also handles the
+      authentication of the user. SAML, however, is an XML-based framework and
+      uses XML in its communications.</p>
+    <img alt="Authentication (User Identity Management and Credential Management) and Authorization (Access Control Access Authorization) boxes" src="images/fedidcg-image5.png" width="400"
+     height="200">
+    <p>Currently, it’s possible for the Relying Party and Identity Provider to
+      collect information about the user that the user might not be aware of. It’s
+      also possible for different organizations to collude with one another to
+      join the data they’ve collected about a user (especially when the
+      credentials used include a global identifier such as a user’s email
+      address). As a result, user-agents are trying to take a more active role in
+      assuring their users’ privacy online, but there are still questions as to
+      what role a user-agent should play in federated identity flows.</p>
+    <p>There are four possible scenarios for the user-agent’s role: </p>
+      <ol>
+        <li>The status quo is kept, and the user-agent facilitates but doesn’t
+          take an active role.</li>
+        <li>The user-agent does its best to highlight any potential privacy
+          risks for a user but doesn’t try to mitigate the risks directly.
+          Instead, the user-agent would ask the user to grant their permission
+          to continue. This is referred to as the permission-oriented approach.</li>
+        <li>The user-agent takes a more active role by taking on some of the
+          current Identity Provider responsibilities. In this case, the
+          user-agent manages the user interface and account options shown to
+          the user. This is called the mediation-oriented approach.</li>
+        <li>The final scenario is one where the user-agent takes on the most
+          active role. In it, the user-agent would not only manage the user
+          interface presented to a user but would also manage the presentation
+          of the required tokens to the Relying Parties. The Identity Providers
+          would still be responsible for issuing tokens but would be delegating
+          the submission of them to the user-agents. This is why it’s referred
+          to as the delegation-oriented approach.</li>
+        </ol>
+      <p>Each option has compelling pros and cons that trigger debate.  With the
+        first option, if the user-agents don’t limit how third-party cookies can
+        be used, they will be accountable for the resulting privacy issues and
+        concerns - making this an unlikely course of action.  If the user-agents
+        continue with the planned privacy changes for third-party cookies, but do
+        nothing else, then the areas of identity federation that rely on
+        third-party cookies currently will stop working.  This is also untenable,
+        so the first option seems unlikely.</p>
+
+      <p>With the second option of the user-agents highlighting the privacy
+        risks for their users, it does give users control over their privacy
+        choices.  However, historically privacy prompts like this have proven to
+        be ineffective at best and a negative user experience at worst.  It places
+        all of the responsibility with the users to understand the consequences of
+        their choices.  Some users might welcome that, but others certainly
+        wouldn’t.</p>
+
+      <p>The third mediation option removes some of this burden from users, but
+        in turn it also complicates how the protocols would actually need to work.
+        It requires a significant amount of work on the standards that define
+        identity federation, and in turn, it will require a yet-to-be-determined
+        level of implementation work.  It’s not a trivial change.</p>
+
+      <p>Finally, the fourth option, with the user-agent taking the most active
+        role, does protect users from having either the Relying Parties or
+        Identity Providers tracking them.  However, it would also be the most
+        complicated change and would take the greatest amount of work from not
+        only the user-agents, but also the Relying Parties and Identity Providers
+        themselves. Specifically, the delegation-oriented model is not likely to
+        be backwards compatible with the current deployment, so it’s not a good
+        option as a preliminary solution (at least, as a mutually exclusive
+        option). The greater the amount of work involved, the longer it typically
+        takes to execute a change - and the deprecation of third-party cookies is
+        a deadline for this since third-party cookies are often currently
+        needed.</p>
+
+      <p>The other concern with the fourth option is that, while the tracking
+        risk from Relying Parties or Identity Providers is decreased, it doesn’t
+        stop the user-agent itself from engaging in user tracking (although trying
+        to restrict this would be something of an unrealistic requirement).
+        However, it does limit the number of potential bad actors, but it doesn’t
+        necessarily eradicate the tracking risk altogether because if the
+        user-agent itself is a bad actor, the user’s privacy would still be at
+        risk.</p>
+    </section>
+    <section>
+    <h1>Use Cases</h1>
+    <h2>Relying Party with Embedded Resources</h2>
+    <p>This is one of the most complex of the documented use cases and also the
+      most common. A site has embedded components, typically as iframes, which
+      require authentication and are often transparent to the user. A seamless
+      experience is desired and the user should not have to sign in to each
+      component individually.</p>
+          <img alt="myapp.com with embedded api.chat.example.com and content.demo.com; embed.cdn.net is embedded in content.demo.com" src="images/fedidcg-image1.jpg">
+    <p>Tracked items for this use case:</p>
+      <ul>
+        <li><a href="https://github.com/fedidcg/use-case-library/issues/13">User Story: Sign into RP with embedded resources · Issue #13 · fedidcg/use-case-library (github.com)</a></li>
+        <li><a href="https://github.com/fedidcg/use-case-library/issues/8">User Story: Interact seamlessly with multiple embedded resources as part of a web app · Issue #8 · fedidcg/use-case-library (github.com)</a></li>
+      </ul>
+
+    <h2>Background Token Renewal</h2>
+    <p>Many single-page applications (SPAs) need to acquire or refresh tokens
+      silently without interacting with the user. These token requests typically u
+      se an embedded hidden iframe to avoid having to reload the page.</p>
+
+    <p>Tracked items for this use case:</p>
+      <ul>
+        <li><a href-"https://github.com/fedidcg/protocol-library/issues/7">Sign Out - IFrame-based Session Extension - Issue #7 - fedidcg/protocol-library (github.com)</a></li>
+      </ul>
+    <p> Real-world examples:</p>
+      <ul>
+        <li><a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/msal-js-avoid-page-reloads">Avoid page reloads (MSAL.js) - Microsoft identity platform | Microsoft Docs</a></li>
+        <li><a href="https://auth0.com/docs/authenticate/login/configure-silent-authentication">Configure Silent Authentication (auth0.com)</a></li>
+      </ul>
+
+    <h2>User Session Management</h2>
+      <p>Relying parties may periodically query the identity provider to check
+        the status of the user’s session. This is typically done via a
+        credentialed request in a hidden iframe. If the session is still valid,
+        the RP will likely take no action. If the session is no longer valid,
+        the RP will clear the local session and initiate a sign in.</p>
+          <img alt="myapp.com with login.idp.com/sessioncheck embedded" src="images/fedidcg-image3.jpg">
+      <p>Tracked items for this use case:</p>
+        <ul>
+          <li><a href="https://github.com/fedidcg/use-case-library/issues/14">User Story: Session extension · Issue #14 · fedidcg/use-case-library (github.com)</a></li>
+          <li><a href="https://github.com/fedidcg/protocol-library/issues/9">[Sign Out / SM] OpenID Connect "Session Management" · Issue #9 · fedidcg/protocol-library (github.com)</a></li>
+        </ul>
+
+      <p>Real-world examples:</p>
+        <ul>
+          <li><a href="https://auth0.com/docs/libraries/auth0js#polling-with-checksession-">Auth0.js v9 Reference</a></li>
+          <li><a href="https://support.okta.com/help/s/article/FAQ-How-Blocking-Third-Party-Cookies-Can-Potentially-Impact-Your-Okta-Environment?language=en_US">FAQ: How Blocked Third Party Cookies Can Potentially Impact Your Okta Environment</a></li>
+        </ul>
+
+      <h2>Sign Out</h2>
+      <p>One of the most widely deployed federated sign out methods is called
+        Front Channel Logout, where all sign-out signals occur via the browser
+        through a series of redirects and hidden iframes. </p>
+
+       <p>A user starts the process by clicking a logout button from their
+         current resource/site/application. The site clears its local session
+         and then redirects to the Identity Provider. The IdP clears its local
+         session and then loads a series of hidden iframes for all RPs where the
+         user currently has an active session. Each of these RPs process the
+         request and clear their local session.</p>
+         <img alt="login.idp.com with three embedded services" src="images/fedidcg-image2.png">
+        <p>Tracked items for this use case:</p>
+          <ul>
+            <li><a href="https://github.com/fedidcg/use-case-library/issues/9">User Story: I want to sign out of all my apps immediately in the browser. · Issue #9 · fedidcg/use-case-library (github.com)</a></li>
+            <li><a href="https://github.com/fedidcg/protocol-library/issues/10">[Sign Out / SM] OpenID Connect Front-Channel Logout · Issue #10 · fedidcg/protocol-library (github.com)</a></li>
+          </ul>
+
+        <p>Real-world examples:</p>
+          <ul>
+            <li><a href="https://help.okta.com/en/prod/Content/Topics/Apps/Apps_Single_Logout.htm">Configure Single Logout in app integrations | Okta</a></li>
+            <li><a href="https://auth0.com/docs/authenticate/login/logout">Logout (auth0.com)</a></li>
+            <li><a href="https://docs.microsoft.com/en-us/azure/active-directory/develop/scenario-web-app-sign-user-sign-in?tabs=aspnetcore#sign-out">Write a web app that signs in/out users - Microsoft identity platform | Microsoft Docs</a></li>
+            <li><a href="https://docs.pingidentity.com/bundle/pingfederate-92/page/adminGuide/asynchronousFrontChannelLogout.html#:~:text=Configure%20Asynchronous%20Front%2DChannel%20Logout&text=Select%20the%20PingAccess%20Logout%20Capable,close%20sessions%20on%20their%20end.">Asynchronous Front-Channel Logout (pingidentity.com)</a></li>
+          </ul>
+
+    </section>
+    <section>
+    <h1>FedID CG Work Items</h1>
+
+    <p>As of March 2022, the community group has one work item, the <a  href="https://fedidcg.github.io/FedCM/">Federated
+      Credential Management API</a> (FedCM). FedCM is a Google proposal for a web
+      platform API that allows users to login to websites with their federated
+      accounts in a privacy-preserving manner.  Google describes it this way:</p>
+
+       <blockquote cite="https://fedidcg.github.io/FedCM/">“Federated Credentials Management API aims to fill the
+         specific hole left by the removal of third-party cookies on
+         federated login. Historically this has relied on third-party cookies
+         or navigational redirects in order to function as they were the
+         primitives provided by the web.”</blockquote>
+
+      <p>At its heart, this API acts as an active intermediary of identity
+        flows. Of the four options we previously outlined , it is a mediation-
+        oriented approach. Google did consider other approaches as well, but
+        they chose this option because they believe it gives users the greatest
+        privacy protections while also still being practical to implement in the
+        timeframe before third-party cookies are deprecated.  The FedCM API
+        introduces a new consent query that will require the user to acknowledge
+        they want a sign-in, sign-up, or sign-out action to happen between the
+        RP and the IdP.</p>
+
+      <p>It’s important to realize that FedCM is not intended to be a
+        one-size-fits-all answer for all federated identity use cases. It is
+        intended to work as a fallback when other potential solutions, such as
+        <a href="https://github.com/WICG/first-party-sets">First Party Sets</a>,
+        do not apply. It is a stand-alone solution which may
+        be used on its own, (although that might result in a less desirable
+        user experience). It also works with, rather than in opposition to,
+        other possible solutions like enterprise policies and user settings.
+        Each potential solution offers different deployment  and user experience
+        trade-offs that should be considered as well.</p>
+    </section>
+    <section>
+    <h1>Relationship with Other Initiatives</h1>
+      <p>Intersection with other efforts/initiatives (e.g., storage access API)</p>
+
+      <p>There are several low-level primitives that may impact federated
+        identity flows, including third-party cookies, first-party cookies,
+        LocalStorage, iFrames, redirects, link decoration, form posts, and
+        possibly popups.</p>
+
+      <p>The community group has developed a table that takes a high-level view
+        of the various authentication protocol primitives and whether or not
+        they are likely to be impacted by the deprecation of third-party cookies
+        as well as any changes in how browsers handle link decoration or
+        redirection. This table is a work-in-progress and is available in our
+        GitHub repository [PrimitiveUseCases].  A snapshot of the table is below:</p>
+
+        <table>
+        <thead>
+          <tr>
+            <th>Usage</th>
+            <th>Protocol</th>
+            <th>Flow</th>
+            <th>3P Cookies</th>
+            <th>Link Decoration</th>
+            <th>Redirect</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Sign-in</td>
+            <td>OIDC</td>
+            <td>Implicit + form POST</td>
+            <td>No</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Sign-in</td>
+            <td>OIDC</td>
+            <td>Code flow</td>
+            <td>No</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Sign-in</td>
+            <td>OIDC</td>
+            <td>SPA: Code + PKCE</td>
+            <td>No</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Sign-in</td>
+            <td>OIDC</td>
+            <td>SPA: Implicit, fragment</td>
+            <td>No</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Sign-in</td>
+            <td>SAML 2.0</td>
+            <td>Redirect + POST</td>
+            <td>No</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Sign-in</td>
+            <td>SAML 2.0</td>
+            <td>Artifact binding</td>
+            <td>No</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Sign-in</td>
+            <td>WS-Federation</td>
+            <td>Redirect + POST</td>
+            <td>No</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Sign-out</td>
+            <td>OIDC</td>
+            <td>RP-Initiated Logout</td>
+            <td>No</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Sign-out</td>
+            <td>OIDC</td>
+            <td>Front-Channel Logout</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Sign-out</td>
+            <td>OIDC</td>
+            <td>Backchannel Logout</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Sign-out</td>
+            <td>OIDC</td>
+            <td>Session Management</td>
+            <td>Yes</td>
+            <td>No</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Sign-out</td>
+            <td>SAML 2.0</td>
+            <td>Single Log Out (SLO)</td>
+            <td>Maybe</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Token Retrieval</td>
+            <td>OAuth 2.0</td>
+            <td>Code flow</td>
+            <td>No</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Token Retrieval</td>
+            <td>OAuth 2.0</td>
+            <td>SPA: Code + PKCE</td>
+            <td>No</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Token Renewal</td>
+            <td>OAuth 2.0</td>
+            <td>SPA: background token renewal (iframe)</td>
+            <td>Yes</td>
+            <td>Yes</td>
+            <td>Yes</td>
+          </tr>
+          <tr>
+            <td>Token Renewal</td>
+            <td>OAuth 2.0</td>
+            <td>SPA: background token renewal (refresh token)</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Token Usage</td>
+            <td>OAuth 2.0</td>
+            <td>JS bearer token</td>
+            <td>No</td>
+            <td>No</td>
+            <td>No</td>
+          </tr>
+        </tbody>
+        </table>
+
+      <p>While there are elements of the identity protocols themselves (e.g.,
+      OAuth2, OIDC, SAML) that may be used to work around the deprecation of
+      some of those primitives (e.g., using a backchannel logout model in place
+      of a front-channel logout model), there are also work items in other
+      groups that are important to be aware of.</p>
+
+      <p>The Privacy Community Group has several proposals under development,
+      including First Party Sets, Storage Access, Storage Partitioning, and
+      several others.[PrivacyCG]  Those proposals are not specifically targeted
+      to handle identity federation, but still may be potential solutions for
+      different scenarios.</p>
+
+      <p>Google has several proposals, some actively under discussion in a
+      community group, others being developed internally, that are being built
+      under their Privacy Sandbox efforts.[PrivacySandbox] Similarly, Mozilla’s
+      Firefox is focused on several privacy-related products, though none are
+      currently targeting the identity federation use cases. Apple’s WebKit has
+      focused on their Intelligent Tracking Protection efforts.[ITP]</p>
+
+      <p>The table below lists all of the proposals that might be useful for
+      different identity federation use cases.  The proposal names are linked to
+      the Github repository where the proposal is being developed.  There you
+      can find more information about the proposal, ask any questions you might
+      have, and provide any potential feedback.</p>
+
+      <table>
+      <thead>
+        <tr>
+          <th>Initiative</th>
+          <th>Focus</th>
+          <th colspan="2">Description</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://github.com/fedidcg/FedCM">FedCM</a></td>
+          <td>Federated Identity</td>
+          <td colspan="2">How to support federated identity without third-party cookies</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/privacycg/storage-access">Storage Access API</a></td>
+          <td>Browser storage</td>
+          <td colspan="2">Requesting user permission to access first-party storage</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/WICG/CHIPS">CHIPS</a></td>
+          <td>Third-party cookies</td>
+          <td colspan="2">Adds an attribute that allows third-party cookies which are partitioned and can only be used on the site they were set</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/privacycg/first-party-sets">First-Party Sets (FPS)</a></td>
+          <td>Same entity/organization </td>
+          <td colspan="2">A mechanism where third-party cookies can be treated as first-party cookies when the domains are owned by the same organization</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/privacycg/is-logged-in">Login Status API (fka isLoggedIn)</a></td>
+          <td>Authentication</td>
+          <td colspan="2">A signal that a user-agent uses to evaluate the privacy context the user is at.</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/WICG/trust-token-api">Trust Tokens</a></td>
+          <td>Fraud</td>
+          <td colspan="2">Adds a new client-side storage for Trust Tokens as an anti-fraud mechanism.</td>
+        </tr>
+        <tr>
+          <td><a href="https://github.com/WICG/fenced-frame">Fenced Frame</a></td>
+          <td>IFrame restrictions</td>
+          <td colspan="2">Restricting communication between the parent and child frames</td>
+        </tr>
+      </tbody>
+      </table>
+
+      <p>There are other potential solutions to consider as well. Some of them are outlined in the following table.</p>
+
+      <table>
+<thead>
+  <tr>
+    <th>Option</th>
+    <th colspan="2">Description</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>CNAMES</td>
+    <td colspan="2">You can use DNS CNAME records to turn third-party resources into first-party resources instead.  This is likely only a viable solution if you have only one Relying Party, and own the identity federation flow.  If you do, you can keep your current implementation by creating a custom domain that turns your IdP into the same domain as your app. This requires DNS/domain administration.<br>Not clear if viable long term (<a href="https://github.com/privacycg/meetings/issues/17">context</a>).</td>
+  </tr>
+  <tr>
+    <td>Backchannel Logout</td>
+    <td colspan="2">Instead of sending logout signals through the user-agent (aka the front  channel), you can switch to communicating server-to-server instead (the back channel).  This removes any reliance on third-party cookies, but it does require new infrastructure for both Identity Providers and relying parties, including potential network changes.  Therefore it’s not viable for many on-premises deployments that are exposed to the internet. <br> </td>
+  </tr>
+</tbody>
+</table>
+
+
+    </section>
+
+  </body>
+</html>
