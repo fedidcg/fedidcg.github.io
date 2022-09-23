@@ -1,18 +1,20 @@
 # Federated Identity Community Group Charter
 
-- [This Charter](https://fedidcg.github.io/charters/2021-08-02) (version 2021-08-02)
-- Previous Charter: n/a
-- Start Date: August 2, 2021
+- [This Charter](https://fedidcg.github.io/charters/2021-08-02) (version 2022-10-xx)
+- Previous Charter: (version 2021-08-02)
+- Community Group Start Date: August 2, 2021
 
 ## Goals
 
 The purpose of the Federated Identity Community Group is to provide a forum focused on incubating web features that will both support federated identity and prevent untransparent, uncontrollable tracking of users across the web. While the community group will take privacy concerns into consideration, these concerns will be balanced against the need to explore innovative ideas around federated authentication on the web.
 
-The group has both short- and long-term goals; the initial work focuses on the short-term goals as prioritized by the urgency of changes already underway, such as the phasing out of third-party cookies. This charter will be reviewed no later than one year from approval to potentially reset the goals and priorities.
+The group has both short- and long-term goals; the initial work focused on the short-term goals as prioritized by the urgency of changes already underway, such as the phasing out of third-party cookies. As the deprecation of third-party cookies moves ahead, the group's focus will expand to consider changes to link decoration and bounce tracking. This charter will be reviewed annually to potentially reset the goals and priorities.
 
 ## Scope of Work
 
 Federated authentication--the outsourcing of authentication to another origin--and tracking tools use the same primitives and are indistinguishable from non-transparent, uncontrollable tracking from the browser’s perspective. Current proposed mitigations for tracking will impact federated identity. This group will discuss potential user agent features and APIs.
+
+As part of its work, the community group will also develop a charter for a Working Group with similar scope. This working group shall provide a venue for formal standardization of work that this Community Group incubates. 
 
 ### Out of Scope
 
@@ -57,7 +59,8 @@ The current set of work items of the community group are:
 
 | Name | Editors | Expected Destinations |
 | ---- | ------- | --------------------- |
-|      |         |                       |
+| [FedCM](https://github.com/fedidcg/FedCM) | Sam Goto (Google) |  FedID Working Group (TBA)  |
+| [Decision Tree Documentation](https://github.com/fedidcg/use-case-library/tree/main/decision_tree_flows) | Kris Chapman (Salesforce) | FedID CG Report | 
 
 This list will be kept updated by the chairs to reflect the current set of work items of the community group.
 
