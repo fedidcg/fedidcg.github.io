@@ -1,14 +1,16 @@
 # Federated Identity Community Group Charter
 
-- [This Charter](https://fedidcg.github.io/charters/2021-08-02) (version 2022-10-xx)
-- Previous Charter: (version 2021-08-02)
+- This Charter (version 2022-10-xx)
+- Previous Charter: (version [2021-08-02](https://github.com/fedidcg/fedidcg.github.io/blob/main/charters/2021-08-02.md))
 - Community Group Start Date: August 2, 2021
 
 ## Goals
 
 The purpose of the Federated Identity Community Group is to provide a forum focused on incubating web features that will both support federated identity and prevent untransparent, uncontrollable tracking of users across the web. While the community group will take privacy concerns into consideration, these concerns will be balanced against the need to explore innovative ideas around federated authentication on the web.
 
-The group has both short- and long-term goals; the initial work focused on the short-term goals as prioritized by the urgency of changes already underway, such as the phasing out of third-party cookies. As the deprecation of third-party cookies moves ahead, the group's focus will expand to consider changes to link decoration and bounce tracking. This charter will be reviewed annually to potentially reset the goals and priorities.
+The group has both short- and long-term goals; the initial work focused on the short-term goals as prioritized by the urgency of changes already underway, such as the phasing out of third-party cookies. While that immediate focus will continue, work may expand as new and existing proposals develop to solve the immediate needs. In particular, as the blocking or partitioning of third-party cookies moves ahead with all major browsers, the group's focus will expand to consider changes to navigational tracking and bounce tracking. 
+
+This charter will be reviewed at least annually to potentially reset the goals and priorities.
 
 ## Scope of Work
 
