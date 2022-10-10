@@ -2,7 +2,7 @@
 
 This repository contains the source files of the
 [web page](https://fedidcg.github.io/) and
-[current charter](https://fedidcg.github.io/charter) of the
+[current charter](https://https://github.com/fedidcg/charter.md) of the
 [Federated Identity Community Group](https://fedidcg.github.io/).
 
 ## Code of Conduct
