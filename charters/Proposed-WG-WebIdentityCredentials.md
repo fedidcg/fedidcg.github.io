@@ -2,9 +2,7 @@
 
 The *W3C Web Identity Credential Working Group* will develop
 recommendation-track specifications defining an API that allows websites
-to request a federated identity credential or assertion, with the
-purpose of authenticating a user and/or requesting a set of claims via
-OIDC or SAML.
+to request a federated identity credential or assertion with the purpose of authenticating a user and/or requesting a set of claims in a compatible way OIDC or SAML.
 
 
 |                      |                                                                                                                                                                                                                                                                                                                                 |
@@ -28,6 +26,8 @@ development of a new mechanism and how information is passed by the
 browser between the RP and the IdP to facilitate federated
 authentication; it is not an authentication method.
 
+If the mechanisms developed to support authentication and authorization flows look like they will result in breaking changes for existing protocols, work on that mechanism must include a well-documented transition period. 
+
 ### Out of Scope
 
 The identity space is much larger than federated authentication. While
@@ -42,7 +42,6 @@ Specific topics out of scope:
 
 -   Ad-tech tools or APIs
 
--   Breaking changes of existing authentication specifications (i.e., SAML, OIDC, OAuth) without a well-documented transition period
 
 ## Deliverables
 
