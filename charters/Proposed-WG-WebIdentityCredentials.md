@@ -7,10 +7,10 @@ to request a federated identity credential or assertion with the purpose of auth
 
 |                      |                                                                                                                                                                                                                                                                                                                                 |
 |----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Charter Status**   | *See the [group status page] (https://www.w3.org/groups/wg/%5Bshortname%5D/charters) and detailed change history (TBA)*                                                                                                                                                                                                         |
-| **Start date**       | *\[dd monthname yyyy\] (date of the \"Call for Participation\", when the charter is approved)*                                                                                                                                                                                                                                  |
+| **Charter Status**   | *See the [group status page](https://www.w3.org/groups/wg/%5Bshortname%5D/charters) and detailed change history (TBA)*                                                                                                                                                                                                         |
+| **Start date**       | *\[dd monthname yyyy\](date of the \"Call for Participation\", when the charter is approved)*                                                                                                                                                                                                                                  |
 | **End date**         | *\[dd monthname yyyy\]* (Start date + 2 years)                                                                                                                                                                                                                                                                                  |
-| **Chairs**           | *\[chair name\] (affiliation), \[chair name\] (affiliation)*                                                                                                                                                                                                                                                                    |
+| **Chairs**           | *\[chair name\](affiliation), \[chair name\](affiliation)*                                                                                                                                                                                                                                                                    |
 | **Team Contacts**    | \[team contact name\] *(0.1 FTE)*                                                                                                                                                                                                                                                                                               |
 | **Meeting Schedule** | **Teleconferences:** We expect to meet every 1-2 weeks for longer-than-hour blocks, which might be spread over several days  **Face-to-face:** we will meet during the W3C\'s annual Technical Plenary week; additional face-to-face meetings may be scheduled by consent of the participants, usually no more than 3 per year. |
 
@@ -108,17 +108,17 @@ used to maximize accessibility in implementations.
 ## Coordination
 
 For all specifications, this Working Group will seek [horizontal
-review] (https://www.w3.org/Guide/documentreview/#how_to_get_horizontal_review)
+review](https://www.w3.org/Guide/documentreview/#how_to_get_horizontal_review)
 for accessibility, internationalization, performance, privacy, and
 security with the relevant Working and Interest Groups, and with the
-[TAG] (https://www.w3.org/2001/tag/). Invitation for review must
+[TAG](https://www.w3.org/2001/tag/). Invitation for review must
 be issued during each major standards-track document transition,
-including [FPWD] (https://www.w3.org/Consortium/Process/#RecsWD).
+including [FPWD](https://www.w3.org/Consortium/Process/#RecsWD).
 The Working Group is encouraged to engage collaboratively with the
 horizontal review groups throughout development of each specification.
 The Working Group is advised to seek a review at least 3 months before
 first entering
-[CR] (https://www.w3.org/Consortium/Process/#RecsCR) and is
+[CR](https://www.w3.org/Consortium/Process/#RecsCR) and is
 encouraged to proactively notify the horizontal review groups when major
 changes occur in a specification following a review. Additionally, the
 technologies this Working Group will be considering will be relevant for
@@ -129,42 +129,42 @@ Ecma, and IETF as needed.
 The WG will coordinate with the Federated Identity Community Group
 (FedIDCG) to solicit feedback from a wider community of interest. At any
 time, but always when a specification is undergoing a [state
-change] (https://www.w3.org/2021/Process-20211102/#rec-track), the
+change](https://www.w3.org/2021/Process-20211102/#rec-track), the
 WG will ask the CG for feedback. The WG will allow the CG at least 4
 weeks to gather that feedback.
 
 Additional technical coordination with the following Groups will be
 made, per the [W3C Process
-Document] (https://www.w3.org/Consortium/Process/#WGCharter):
+Document](https://www.w3.org/Consortium/Process/#WGCharter):
 
 ### W3C Groups
 
-[Federated Identity Community Group] (https://www.w3.org/groups/cg/fed-id)
+[Federated Identity Community Group](https://www.w3.org/groups/cg/fed-id)
 
 This Working Group will work closely with FedIDCG. The expectation is
 that FedIDCG will incubate proposals which it then hands off to this
 Working Group for standardization. Most proposals in this Working Group
 should start in FedIDCG.
 
-[Privacy Interest Group (PING)] (https://www.w3.org/Privacy/IG/)
+[Privacy Interest Group (PING)](https://www.w3.org/Privacy/IG/)
 
 This Working Group will coordinate with PING on the development of
 principles that will guide the development of privacy-preserving
 capabilities while still supporting federated authentication and
 authorization flows.
 
-[Web Application Security Working Group (WebAppSec)] (https://www.w3.org/2011/webappsec/)
+[Web Application Security Working Group (WebAppSec)](https://www.w3.org/2011/webappsec/)
 
 WebAppSec is both a potential venue for standardization of
 security-related capabilities and a source of expertise on web privacy.
 
-[Privacy Community Group] (https://privacycg.github.io/)
+[Privacy Community Group](https://privacycg.github.io/)
 
 The Privacy Community Group is developing privacy-focused features. This
 working group is expected to regularly coordinate with the Privacy CG to
 ensure that the work of the two groups is not in conflict.
 
-[Technical Architecture Group (TAG)] (https://www.w3.org/2001/tag/)
+[Technical Architecture Group (TAG)](https://www.w3.org/2001/tag/)
 
 The TAG develops general design principles that will guide the work of
 this Working Group. The TAG might provide input and guidance on specific
@@ -172,25 +172,25 @@ aspects of the work.
 
 ### External Organizations
 
-[IETF] (https://www.ietf.org)
+[IETF](https://www.ietf.org)
 
 A number of IETF working groups are likely venues for standardization of
 protocol components that authentication and authorization features
 depend on and research groups are investigating issues that will feed
 into the designs this group will consider.
 
-[OIDF] (https://openid.net)
+[OIDF](https://openid.net)
 
 The OpenID Foundation (OIDF) is a likely venue for standardization of
 components that certain authorization flows depend on (i.e., OIDC
 specs).
 
-[OASIS] (https://oasis-open.org)
+[OASIS](https://oasis-open.org)
 
 OASIS is a likely venue for standardization of components that certain
 authorization flows depend on (i.e., SAML specs).
 
-[REFEDS] (https://refeds.org)
+[REFEDS](https://refeds.org)
 
 REFEDS is a likely venue for multi-lateral federation best practices and
 a representative of the complex use cases of the research and education
@@ -209,16 +209,16 @@ requirement for other Participants.
 
 The Working Group encourages questions, comments and issues on its
 public mailing lists and document repositories, as described in
-[Communication] (https://www.w3.org/2022/08/PROPOSED-PATWG-charter.html#communication).
+[Communication](https://www.w3.org/2022/08/PROPOSED-PATWG-charter.html#communication).
 
 The group also welcomes non-Members to contribute technical submissions
 for consideration upon their agreement to the terms of the [W3C Patent
-Policy] (https://www.w3.org/Consortium/Patent-Policy/).
+Policy](https://www.w3.org/Consortium/Patent-Policy/).
 
 Participants in the group are required (by the [W3C
-Process] (https://www.w3.org/Consortium/Process/#ParticipationCriteria))
+Process](https://www.w3.org/Consortium/Process/#ParticipationCriteria))
 to follow the W3C [Code of Ethics and Professional
-Conduct] (https://www.w3.org/Consortium/cepc/).
+Conduct](https://www.w3.org/Consortium/cepc/).
 
 ## Communication
 
@@ -260,9 +260,9 @@ such a discussion.
 ## Decision Policy
 
 This Working Group will seek to make decisions through
-[consensus] (https://www.w3.org/Consortium/Process/#Consensus) and
+[consensus](https://www.w3.org/Consortium/Process/#Consensus) and
 the documented decision making process of [the W3C Process Document
-(Section 5, Decisions)] (https://www.w3.org/Consortium/Process/#decisions).
+(Section 5, Decisions)](https://www.w3.org/Consortium/Process/#decisions).
 Typically, an editor or other participant makes an initial proposal,
 which is then refined in discussion with members of the Working Group
 and other reviewers, and consensus emerges with little formal voting
@@ -301,35 +301,35 @@ the discretion of the Chairs or the Director.
 
 This charter is written in accordance with the [W3C Process Document
 (Section 5.2.3, Deciding by
-Vote)] (https://www.w3.org/Consortium/Process/#Votes) and includes
+Vote)](https://www.w3.org/Consortium/Process/#Votes) and includes
 no voting procedures beyond what the Process Document requires.
 
 ## Patent Policy
 
 This Working Group operates under the [W3C Patent
-Policy] (https://www.w3.org/Consortium/Patent-Policy/) (Version of
+Policy](https://www.w3.org/Consortium/Patent-Policy/) (Version of
 15 September 2020). To promote the widest adoption of Web standards, W3C
 seeks to issue Web specifications that can be implemented, according to
 this policy, on a Royalty-Free basis. For more information about
 disclosure obligations for this group, please see the [licensing
-information] (https://www.w3.org/groups/wg/%5Bshortname%5D/ipr).
+information](https://www.w3.org/groups/wg/%5Bshortname%5D/ipr).
 
 ## Licensing
 
 This Working Group will use the [W3C Software and Document
-license] (https://www.w3.org/Consortium/Legal/copyright-software)
+license](https://www.w3.org/Consortium/Legal/copyright-software)
 for all its deliverables.
 
 ## Anti-Trust
 
 This Working Group operates under the [W3C antitrust
-policy] (https://www.w3.org/Consortium/Legal/2017/antitrust-guidance).
+policy](https://www.w3.org/Consortium/Legal/2017/antitrust-guidance).
 
 ## About this Charter
 
 This charter has been created according to [section
-3.4] (https://www.w3.org/Consortium/Process/#GAGeneral) of the
-[Process Document] (https://www.w3.org/Consortium/Process/). In
+3.4](https://www.w3.org/Consortium/Process/#GAGeneral) of the
+[Process Document](https://www.w3.org/Consortium/Process/). In
 the event of a conflict between this document or the provisions of any
 charter and the W3C Process, the W3C Process shall take precedence.
 
@@ -337,7 +337,7 @@ charter and the W3C Process, the W3C Process shall take precedence.
 
 The following table lists details of all changes from the initial
 charter, per the [W3C Process Document (section 4.3, Advisory Committee
-Review of a Charter)] (https://www.w3.org/Consortium/Process/#CharterReview):
+Review of a Charter)](https://www.w3.org/Consortium/Process/#CharterReview):
 
   **Charter Period**    **Start Date**            **End Date**              **Changes**
   --------------------- ------------------------- ------------------------- -------------
