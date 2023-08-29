@@ -2,7 +2,7 @@
 
 The *W3C Web Identity Credential Working Group* will develop
 recommendation-track specifications defining an API that allows websites
-to request a federated identity credential or assertion with the purpose of authenticating a user and/or requesting a set of claims in a compatible way OIDC or SAML.
+to request a federated identity credential or assertion with the purpose of authenticating a user and/or requesting a set of claims compatible with OIDC and SAML (specifically the [SP initiated Web Browser SSO profile](http://docs.oasis-open.org/security/saml/v2.0/saml-profiles-2.0-os.pdf)).
 
 
 |                      |                                                                                                                                                                                                                                                                                                                                 |
@@ -19,11 +19,11 @@ to request a federated identity credential or assertion with the purpose of auth
 The Working Group will specify new web platform features intended to be
 implemented in browsers or similar user agents. The purpose of these
 features is to support authentication and authorization flows without
-compromising security principles for IdPs, RPs, and user agents as well
+compromising security principles for IdPs, RPs,  authentication intermediaries (such as most of the industry-adopted solutions for MFA and Passwordless technologies), and user agents as well
 as user privacy. Here \"privacy\" minimally refers to the appropriate
 processing of personal information. The result of this work is the
 development of a new mechanism and how information is passed by the
-browser between the RP and the IdP to facilitate federated
+browser between the RP, the IdP,  and authentication intermediaries,  to facilitate federated
 authentication; it is not an authentication method.
 
 If the mechanisms developed to support authentication and authorization flows look like they will result in breaking changes for existing protocols, work on that mechanism must include a well-documented transition period. 
