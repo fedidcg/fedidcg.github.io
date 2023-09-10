@@ -36,6 +36,7 @@ We organize our meetings and publish the agendas and minutes from them in our [m
 | ------------------------------------------------- | -------- | ------ |
 | [Heather Flanagan](https://github.com/hlflanagan) | Chair    | Active |
 | [Tim Cappalli](https://github.com/timcappalli)    | Co-chair | Active |
+| [Achim Schlosser](https://github.com/asr-enid)    | Co-chair | Active |
 
 ## Questions?
 
