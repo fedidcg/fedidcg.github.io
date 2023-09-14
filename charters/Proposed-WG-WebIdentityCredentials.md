@@ -1,9 +1,6 @@
 # PROPOSED Web Identity Credential Working Group Charter
 
-The *W3C Web Identity Credential Working Group* will develop
-recommendation-track specifications defining an API that allows websites
-to request a federated identity credential or assertion with the purpose of authenticating a user and/or requesting a set of claims in a compatible way OIDC or SAML.
-
+The *W3C Web Identity Credential Working Group* will develop recommendation-track specifications defining an API that allows websites to request a federated identity credential or assertion with the purpose of authenticating a user and/or requesting a set of claims in a compatible way OIDC or SAML.
 
 |                      |                                                                                                                                                                                                                                                                                                                                 |
 |----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -36,15 +33,13 @@ they are out of scope for our work.
 
 Specific topics out of scope:
 
--   New authentication methods
+- New authentication methods
 
--   Design and discussion regarding individual credential and assertion formats
+- Design and discussion regarding individual credential and assertion formats
 
--   Ad-tech tools or APIs
-
+- Ad-tech tools or APIs
 
 ## Deliverables
-
 
 *Updated document status is available on the* *[group publication
 status page](https://www.w3.org/groups/wg/%5Bshortname%5D/publications).*
@@ -59,23 +54,19 @@ intend to advance their documents further in this charter period.
 The Working Group will deliver the following W3C normative
 specifications:
 
--   Federated Credential Management API
+- Federated Credential Management API
 
 ### Other Deliverables
 
 Other non-normative documents may be created such as:
 
--   Use case and requirement documents;
-
--   Test suite and implementation report for the specification;
-
--   Primer or Best Practice documents to support web developers when designing applications.
+- Use case and requirement documents;
+- Test suite and implementation report for the specification;
+- Primer or Best Practice documents to support web developers when designing applications.
 
 ### Timeline
 
--   Charter +1 month: First teleconference
-
--   ...
+- Charter +1 month: First teleconference
 
 ## Success Criteria
 
@@ -342,8 +333,6 @@ Review of a Charter)](https://www.w3.org/Consortium/Process/#CharterReview):
   **Charter Period**    **Start Date**            **End Date**              **Changes**
   --------------------- ------------------------- ------------------------- -------------
   \[Initial Charter\]   *\[dd monthname yyyy\]*   *\[dd monthname yyyy\]*   n/a
-
-### 
 
 ### **Change log**
 
