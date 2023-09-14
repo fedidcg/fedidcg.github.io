@@ -201,7 +201,7 @@ communities around the world.
 To be successful, this Working Group is expected to have participation
 representative of at least two of each of the following: large-scale
 Identity Provider (IdP) operators, large-scale Relying Parties (RPs),
-federation operators, and two browser vendors. In addition, there must
+federation operators, and browser vendors. In addition, there must
 be active Editors and Test Leads for each specification. The Chairs,
 specification Editors, and Test Leads are expected to contribute half of
 a working day per week towards the Working Group. There is no minimum
