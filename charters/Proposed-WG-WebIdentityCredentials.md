@@ -189,7 +189,7 @@ communities around the world.
 
 ## Participation
 
-To be successful, this Working Group is expected to have participation representative of at least two of each of the following: large-scale Identity Provider (IdP) operators, large-scale Relying Parties (RPs), federation operators, and two browser vendors. In addition, there must be active Editors and Test Leads for each specification. The Chairs, specification Editors, and Test Leads are expected to contribute half of a working day per week towards the Working Group. There is no minimum requirement for other Participants.
+To be successful, this Working Group should have participation from large-scale Identity Provider (IdP) operators, large-scale Relying Parties (RPs), federation operators, and browser vendors. In addition, there must be active Editors and Test Leads for each specification. The Chairs, specification Editors, and Test Leads are expected to contribute half of a working day per week towards the Working Group. There is no minimum requirement for other Participants.
 
 The Working Group encourages questions, comments and issues on its public mailing lists and document repositories, as described in [Communication](https://www.w3.org/2022/08/PROPOSED-PATWG-charter.html#communication).
 
