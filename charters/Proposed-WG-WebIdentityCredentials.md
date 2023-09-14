@@ -22,7 +22,7 @@ features is to support authentication and authorization flows without
 compromising security principles for IdPs, RPs, and user agents as well
 as user privacy. Here \"privacy\" minimally refers to the appropriate
 processing of personal information. The result of this work is the
-development of a new mechanism and how information is passed by the
+development of new mechanisms that define how information is passed by the
 browser between the RP and the IdP to facilitate federated
 authentication; it is not an authentication method.
 
