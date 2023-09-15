@@ -21,7 +21,9 @@ OIDC and SAML.
 The Working Group will specify new web platform features intended to be
 implemented in browsers or similar user agents. The purpose of these
 features is to support authentication and authorization flows without
-compromising security principles for IdPs, RPs,  authentication intermediaries (such as most of the industry-adopted solutions for MFA and Passwordless technologies), and user agents as well
+compromising security principles for IdPs, RPs, authentication intermediaries
+(such as most of the industry-adopted solutions for MFA and Passwordless
+technologies), and user agents as well
 as user privacy. Here \"privacy\" minimally refers to the appropriate
 processing of personal information. The result of this work is the
 development of a new mechanism and how information is passed by the
