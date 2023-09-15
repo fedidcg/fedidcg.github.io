@@ -2,7 +2,9 @@
 
 The *W3C Web Identity Credential Working Group* will develop
 recommendation-track specifications defining an API that allows websites
-to request a federated identity credential or assertion with the purpose of authenticating a user and/or requesting a set of claims compatible with OIDC and SAML (specifically the [SP initiated Web Browser SSO profile](http://docs.oasis-open.org/security/saml/v2.0/saml-profiles-2.0-os.pdf)).
+to request a federated identity credential or assertion with the purpose
+of authenticating a user and/or requesting a set of claims compatible with
+OIDC and SAML.
 
 
 |                      |                                                                                                                                                                                                                                                                                                                                 |
