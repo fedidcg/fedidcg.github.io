@@ -55,6 +55,7 @@ The Working Group will deliver the following W3C normative
 specifications:
 
 - Federated Credential Management API
+- Login Status API
 
 ### Other Deliverables
 
