@@ -13,17 +13,9 @@ The *W3C Web Identity Credential Working Group* will develop living standard spe
 
 ## Scope
 
-The Working Group will specify new web platform features intended to be
-implemented in browsers or similar user agents. The purpose of these
-features is to support authentication and authorization flows without
-compromising security principles for IdPs, RPs, and user agents as well
-as user privacy. Here \"privacy\" minimally refers to the appropriate
-processing of personal information. The result of this work is the
-development of new mechanisms that define how information is passed by the
-browser between the RP and the IdP to facilitate federated
-authentication; it is not an authentication method.
+The Working Group will specify new web platform features intended to be implemented in browsers or similar user agents. The purpose of these features is to support authentication and authorization flows without compromising security principles for Identity Providers (IdPs), Relying Parties (RPs), and User Agents as well as user privacy. Here \"privacy\" minimally refers to the appropriate processing of personal information. The result of this work is the development of new mechanisms that define how information is passed by the browser between the RP and the IdP to facilitate federated authentication; it is not an authentication method.
 
-If any of the mechanisms developed to support authentication and authorization flows looks like it will result in breaking changes for existing protocols, work on that mechanism must include a well-documented transition period.
+If the mechanisms developed to support authentication and authorization flows look like they will result in breaking changes for existing protocols, work on that mechanism must include a well-documented transition period.
 
 ### Out of Scope
 
