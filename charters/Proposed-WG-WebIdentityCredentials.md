@@ -1,6 +1,6 @@
 # PROPOSED Web Identity Credential Working Group Charter
 
-The *W3C Web Identity Credential Working Group* will develop recommendation-track specifications defining an API that allows websites to request a federated identity credential or assertion with the purpose of authenticating a user and/or requesting a set of claims in a compatible way OIDC or SAML.
+The *W3C Web Identity Credential Working Group* will develop living standard specifications defining an API that allows websites to request a federated identity credential or assertion with the purpose of authenticating a user and/or requesting a set of claims in a compatible way OIDC or SAML.
 
 |                      |                                                                                                                                                                                                                                                                                                                                 |
 |----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -13,18 +13,9 @@ The *W3C Web Identity Credential Working Group* will develop recommendation-trac
 
 ## Scope
 
-The Working Group will specify new web platform features intended to be
-implemented in browsers or similar user agents. The purpose of these
-features is to support authentication and authorization flows without
-compromising user privacy nor security principles for Identity Providers 
-(IdPs), Relying Parties (RPs), or User Agents. Here, "privacy" minimally 
-refers to the appropriate
-processing of personal information. The result of this work is the
-development of new mechanisms that define how information is passed by the
-browser between the RP and the IdP to facilitate federated
-authentication; it is not an authentication method.
+The Working Group will specify new web platform features intended to be implemented in browsers or similar user agents. The purpose of these features is to support authentication and authorization flows without compromising security principles for Identity Providers (IdPs), Relying Parties (RPs), and User Agents as well as user privacy. Here "privacy" minimally refers to the appropriate processing of personal information. The result of this work is the development of new mechanisms that define how information is passed by the browser between the RP and the IdP to facilitate federated authentication; it is not an authentication method.
 
-If any of the mechanisms developed to support authentication and authorization flows looks like it will result in breaking changes for existing protocols, work on that mechanism must include a well-documented transition period. 
+If any of the mechanisms developed to support authentication and authorization flows look like they will result in breaking changes for existing protocols, work on that mechanism must include a well-documented transition period.
 
 ### Out of Scope
 
@@ -40,15 +31,15 @@ Specific topics out of scope:
 
 - Ad-tech tools or APIs
 
+- Interactions with identity wallets
+
 ## Deliverables
 
 *Updated document status is available on the* *[group publication
 status page](https://www.w3.org/groups/wg/%5Bshortname%5D/publications).*
 
-*Draft state* indicates the state of the deliverable at the time of the
-charter approval. The Working Group intends to publish the latest state
-of their work as Candidate Recommendation (with Snapshots) and does not
-intend to advance their documents further in this charter period.
+*Draft state* indicates the state of the deliverable at the time of the charter approval.
+The Working Group intends to publish the latest state of their work as Candidate Recommendation Snapshot and does not intend to advance their documents further in this charter period.
 
 ### Normative Specifications
 
@@ -56,6 +47,7 @@ The Working Group will deliver the following W3C normative
 specifications:
 
 - Federated Credential Management API
+- Login Status API
 
 ### Other Deliverables
 
@@ -99,35 +91,14 @@ used to maximize accessibility in implementations.
 
 ## Coordination
 
-For all specifications, this Working Group will seek [horizontal
-review](https://www.w3.org/Guide/documentreview/#how_to_get_horizontal_review)
-for accessibility, internationalization, performance, privacy, and
-security with the relevant Working and Interest Groups, and with the
-[TAG](https://www.w3.org/2001/tag/). Invitation for review must
-be issued during each major standards-track document transition,
-including [FPWD](https://www.w3.org/Consortium/Process/#RecsWD).
-The Working Group is encouraged to engage collaboratively with the
-horizontal review groups throughout development of each specification.
-The Working Group is advised to seek a review at least 3 months before
-first entering
-[CR](https://www.w3.org/Consortium/Process/#RecsCR) and is
-encouraged to proactively notify the horizontal review groups when major
-changes occur in a specification following a review. Additionally, the
-technologies this Working Group will be considering will be relevant for
-other standards development organizations such that the group is
-encouraged to coordinate with the appropriate groups at the WHATWG,
-Ecma, and IETF as needed.
+For all specifications, this Working Group will progress its normative specifications through the following standardization process:
+[First Public Working Draft](https://www.w3.org/2021/Process-20211102/#RecsWD), [Working Draft](https://www.w3.org/2021/Process-20211102/#RecsWD), [Candidate Recommendation Snapshot](https://www.w3.org/2021/Process-20211102/#candidate-recommendation-snapshot), and [Candidate Recommendation Draft](https://www.w3.org/2021/Process-20211102/#candidate-recommendation-draft).
 
-The WG will coordinate with the Federated Identity Community Group
-(FedIDCG) to solicit feedback from a wider community of interest. At any
-time, but always when a specification is undergoing a [state
-change](https://www.w3.org/2021/Process-20211102/#rec-track), the
-WG will ask the CG for feedback. The WG will allow the CG at least 4
-weeks to gather that feedback.
+The WG does not intend to publish specifications as [Proposed Recommendations](https://www.w3.org/2021/Process-20211102/#RecsPR).
 
-Additional technical coordination with the following Groups will be
-made, per the [W3C Process
-Document](https://www.w3.org/Consortium/Process/#WGCharter):
+The WG will coordinate with the Federated Identity Community Group (FedIDCG) to solicit feedback from a wider community of interest.
+
+Additional technical coordination with the following Groups will be made, per the [W3C Process Document](https://www.w3.org/Consortium/Process/#WGCharter).
 
 ### W3C Groups
 
@@ -190,27 +161,13 @@ communities around the world.
 
 ## Participation
 
-To be successful, this Working Group is expected to have participation
-representative of at least two of each of the following: large-scale
-Identity Provider (IdP) operators, large-scale Relying Parties (RPs),
-federation operators, and two browser vendors. In addition, there must
-be active Editors and Test Leads for each specification. The Chairs,
-specification Editors, and Test Leads are expected to contribute half of
-a working day per week towards the Working Group. There is no minimum
-requirement for other Participants.
+To be successful, this Working Group should have participation from large-scale Identity Provider (IdP) operators, large-scale Relying Parties (RPs), federation operators, and browser vendors. In addition, there must be active Editors and Test Leads for each specification. The Chairs, specification Editors, and Test Leads are expected to contribute half of a working day per week towards the Working Group. There is no minimum requirement for other Participants.
 
-The Working Group encourages questions, comments and issues on its
-public mailing lists and document repositories, as described in
-[Communication](https://www.w3.org/2022/08/PROPOSED-PATWG-charter.html#communication).
+The Working Group encourages questions, comments and issues on its public mailing lists and document repositories, as described in [Communication](https://www.w3.org/2022/08/PROPOSED-PATWG-charter.html#communication).
 
-The group also welcomes non-Members to contribute technical submissions
-for consideration upon their agreement to the terms of the [W3C Patent
-Policy](https://www.w3.org/Consortium/Patent-Policy/).
+The group also welcomes non-Members to contribute technical submissions for consideration upon their agreement to the terms of the [W3C Patent Policy](https://www.w3.org/Consortium/Patent-Policy/).
 
-Participants in the group are required (by the [W3C
-Process](https://www.w3.org/Consortium/Process/#ParticipationCriteria))
-to follow the W3C [Code of Ethics and Professional
-Conduct](https://www.w3.org/Consortium/cepc/).
+Participants in the group are required (by the [W3C Process](https://www.w3.org/Consortium/Process/#ParticipationCriteria)) to follow the W3C [Code of Ethics and Professional Conduct](https://www.w3.org/Consortium/cepc/).
 
 ## Communication
 
