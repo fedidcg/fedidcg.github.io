@@ -23,7 +23,7 @@ development of new mechanisms that define how information is passed by the
 browser between the RP and the IdP to facilitate federated
 authentication; it is not an authentication method.
 
-If the mechanisms developed to support authentication and authorization flows look like they will result in breaking changes for existing protocols, work on that mechanism must include a well-documented transition period. 
+If any of the mechanisms developed to support authentication and authorization flows looks like it will result in breaking changes for existing protocols, work on that mechanism must include a well-documented transition period.
 
 ### Out of Scope
 
@@ -38,6 +38,8 @@ Specific topics out of scope:
 - Design and discussion regarding individual credential and assertion formats
 
 - Ad-tech tools or APIs
+
+- Interactions with identity wallets
 
 ## Deliverables
 
