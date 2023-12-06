@@ -1,6 +1,6 @@
-# PROPOSED Web Identity Credential Working Group Charter
+# PROPOSED Federated Identity Working Group Charter
 
-The *W3C Web Identity Credential Working Group* will develop living standard specifications defining an API that allows websites to request a federated identity credential or assertion with the purpose of authenticating a user and/or requesting a set of claims in a compatible way OIDC or SAML.
+The *W3C Federated Identity Working Group* will develop living standard specifications defining an API that allows websites to request a federated identity credential or assertion with the purpose of authenticating a user and/or requesting a set of claims in a compatible way OIDC or SAML.
 
 |                      |                                                                                                                                                                                                                                                                                                                                 |
 |----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -13,7 +13,7 @@ The *W3C Web Identity Credential Working Group* will develop living standard spe
 
 ## Scope
 
-The Working Group will specify new web platform features intended to be implemented in browsers or similar user agents. The purpose of these features is to support authentication and authorization flows without compromising security principles for Identity Providers (IdPs), Relying Parties (RPs), and User Agents as well as user privacy. Here "privacy" minimally refers to the appropriate processing of personal information. The result of this work is the development of new mechanisms that define how information is passed by the browser between the RP, the IdP and authentication intermediaries to facilitate federated authentication; it is not an authentication method.
+The Working Group will specify new web platform features intended to be implemented in browsers or similar user agents. The purpose of these features is to support authentication and authorization flows without compromising security principles for Identity Providers (IdPs), Relying Parties (RPs), and User Agents as well as user privacy. Here "privacy" minimally refers to the appropriate processing of personal information. The result of this work is the development of new mechanisms that define how information is passed by the browser between the RP, the IdP, and authentication intermediaries to facilitate federated authentication; these mechanisms are not an authentication method.
 
 If any of the mechanisms developed to support authentication and authorization flows look like they will result in breaking changes for existing protocols, work on that mechanism must include a well-documented transition period.
 
@@ -39,6 +39,7 @@ Specific topics out of scope:
 status page](https://www.w3.org/groups/wg/%5Bshortname%5D/publications).*
 
 *Draft state* indicates the state of the deliverable at the time of the charter approval.
+
 The Working Group intends to publish the latest state of their work as Candidate Recommendation Snapshot and does not intend to advance their documents further in this charter period.
 
 ### Normative Specifications
@@ -48,13 +49,15 @@ specifications:
 
 - Federated Credential Management API
 - Login Status API
+- Web platform tests 
+
 
 ### Other Deliverables
 
 Other non-normative documents may be created such as:
 
 - Use case and requirement documents;
-- Test suite and implementation report for the specification;
+- Implementation reports for the specification;
 - Primer or Best Practice documents to support web developers when designing applications.
 
 ### Timeline
@@ -133,6 +136,10 @@ The TAG develops general design principles that will guide the work of
 this Working Group. The TAG might provide input and guidance on specific
 aspects of the work.
 
+[Web Authentication (WebAuthn) Working Group](https://www.w3.org/groups/wg/webauthn/)
+
+While we are not developing an authentication mechanism, it still must work in conjunction with existing authentication mechanisms. The WebAuthn Working Group may provide input and guidance for this requirement.
+
 ### External Organizations
 
 [IETF](https://www.ietf.org)
@@ -183,7 +190,7 @@ Group members.
 
 Information about this Working Group (including details about
 deliverables, issues, actions, status, participants, and meetings) will
-be available from the Web Identity Credential Working Group Home Page.
+be available from the Federated Identity Working Group Home Page.
 
 Most Working Group teleconferences will focus on discussion of
 particular specifications, and will be conducted on an as-needed basis.
