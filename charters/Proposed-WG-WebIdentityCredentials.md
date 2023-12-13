@@ -140,6 +140,10 @@ aspects of the work.
 
 While we are not developing an authentication mechanism, it still must work in conjunction with existing authentication mechanisms. The WebAuthn Working Group may provide input and guidance for this requirement.
 
+[Accessible Platform Architectures (APA) WG](https://www.w3.org/WAI/APA/)
+
+The APA WG seeks to ensure that accessibility is kept front of mind, as authentication timing and the reliance on short term memory are known and thorny topics for people with disabilities. APA WG can represent these issues that have been raised in the Cognitive Accessibility (COGA) TF, and Accessibility Guidelines (AG) WG.
+
 ### External Organizations
 
 [IETF](https://www.ietf.org)
