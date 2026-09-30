@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>FedCM has moved</title>
+  <script>
+    (() => {
+      // Compatibility redirects for FedCM URLs referenced by the
+      // published Federated Identity Working Group charter.
+      const redirects = {
+        "#dom-identityprovidertoken-token":
+          "https://w3c-fedid.github.io/FedCM/#dom-identitycredential-token",
+        "#fetch-identity-assertion":
+          "https://w3c-fedid.github.io/FedCM/#fetch-identity-assertion",
+        "#browser-api-login-status":
+          "https://w3c-fedid.github.io/login-status/"
+      };
+
+      const target =
+        redirects[window.location.hash] || "https://w3c-fedid.github.io/FedCM/";
+      window.location.replace(target);
+    })();
+  </script>
+</head>
+<body>
+  <p>
+    FedCM has moved to the Federated Identity Working Group.
+    <a href="https://w3c-fedid.github.io/FedCM/">Open the current specification</a>.
+  </p>
+</body>
+</html>
